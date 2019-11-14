@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render the empty expense list correctly 1`] = `
+<div>
+  <Connect(ExpenseListFilters) />
+  <p>
+    AddExpenses
+  </p>
+</div>
+`;
+
+exports[`Should render the expense list correctly 1`] = `
+<div>
+  <Connect(ExpenseListFilters) />
+  <ExpenseListItem
+    amount={0}
+    createdAt={0}
+    description="love"
+    note="12312"
+  />
+  <ExpenseListItem
+    amount={0}
+    createdAt={0}
+    description="loadave"
+    note="123asd12"
+  />
+</div>
+`;
