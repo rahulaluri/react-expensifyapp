@@ -41,6 +41,7 @@ test('Should render added expense related functions correctly', ()=> {
     expect(editExpense).toHaveBeenLastCalledWith(expense.id,expenseUpdate);
  })
  
+ 
  test('Should render remove expense related functions correctly', ()=> {
     wrapper.find('button').simulate('click');
     expect(history.push).toHaveBeenLastCalledWith('/');
