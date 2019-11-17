@@ -7,7 +7,7 @@ const CSSExtract = new ExtractTextPlugin('styles.css');
 return {
     entry:"./src/app.js",
     output:{
-        path: path.join(__dirname,'Public'),
+        path: path.join(__dirname,'Public','dist'),
         filename: 'bundle.js'
     },
     module:{
@@ -42,7 +42,8 @@ return {
     devtool: isProduction ? 'source-map':'cheap-module-eval-source-map',
     devServer:{
     contentBase: path.join(__dirname,'Public'),
-    historyApiFallback: true
+    historyApiFallback: true,
+    publicPath: '/dist/'
     }
 }
 
