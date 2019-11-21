@@ -1,5 +1,25 @@
 import expenseReducer from '../../reducers/expenses';
+import moment from 'moment';
 
+const expenses = [{
+  id: '1',
+  description: 'Gum',
+  note: '',
+  amount: 195,
+  createdAt: 0
+}, {
+  id: '2',
+  description: 'Rent',
+  note: '',
+  amount: 109500,
+  createdAt: moment(0).subtract(4, 'days').valueOf()
+}, {
+  id: '3',
+  description: 'Credit Card',
+  note: '',
+  amount: 4500,
+  createdAt: moment(0).add(4, 'days').valueOf()
+}];
 
 test('should add expense', () => {
     const expense = {
@@ -35,6 +55,9 @@ test('should add expense', () => {
     const state = expenseReducer(expense, action);
     expect(state).toEqual([]);
   });
+
+  
+
 
   test('should not remove expense if id not found', () => {
     const expense = [{
@@ -89,3 +112,12 @@ test('should add expense', () => {
     expect(state[0].amount).toBe(expense[0].amount);
   });
   
+  test('should setup expenses', () => {
+
+      const action = {
+        type: 'SETUPEXPENSES',
+        expenses:[expeses[1]]
+      };
+    const state = expenseReducer(expenses,action)
+    expect(state).toEqual([expeses[1]]);
+  }); 
